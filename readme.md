@@ -18,7 +18,7 @@ Or with npx:
 $ npx bellbind/remarkjs-pdf slide.html slide.pdf
 ```
 
-Remote url is also work as:
+Slide html as a remote url also works:
 
 ```sh
 $ npx bellbind/remarkjs-pdf https://remarkjs.com/ remarkjs.pdf
