@@ -24,6 +24,15 @@ Remote url is also work as:
 $ npx bellbind/remarkjs-pdf https://remarkjs.com/ remarkjs.pdf
 ```
 
+NOTE: 2nd PDF file path would be generated from the slide URL 
+when PDF file path is omitted:
+
+```sh
+$ npx bellbind/remarkjs-pdf https://remarkjs.com/
+```
+
+A `remarkjs.com.pdf` file would be generated.
+
 ## Advanced
 
 If the slide html use a name other than `slideshow`, 
