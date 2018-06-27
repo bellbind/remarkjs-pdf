@@ -10,7 +10,7 @@ const puppeteer = require("puppeteer");
 
 main().catch(err => {
     console.error(err);
-    process.exit(4);
+    process.exit(5);
 });
 
 // check args
@@ -47,8 +47,9 @@ async function main() {
         await convertPdf(browser, html, pdf);
         await browser.close();
     } catch (err) {
+        console.error(err);
         await browser.close();
-        throw err;
+        process.exit(4);
     }
 }
 async function convertPdf(browser, html, pdf) {
