@@ -26,7 +26,7 @@ $ npx bellbind/remarkjs-pdf https://remarkjs.com/ remarkjs.pdf
 
 ## Limitations
 
-It is only available that the slide HTML has used the name **`slideshow` **
+It is only available that the slide HTML has used the name **`slideshow`**
 for a result object of `remark.create()`.
 
 ## Dependencies
