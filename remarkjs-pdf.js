@@ -1,4 +1,4 @@
-#!/use/bin/env node
+#!/usr/bin/env node
 // commandline PDF converter for remark.js html
 // $ npm install puppeteer
 // $ node convert-pdf.js slide.html slide.pdf
