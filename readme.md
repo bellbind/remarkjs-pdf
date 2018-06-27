@@ -24,10 +24,13 @@ Remote url is also work as:
 $ npx bellbind/remarkjs-pdf https://remarkjs.com/ remarkjs.pdf
 ```
 
-## Limitations
+## Advanced
 
-It is only available that the slide HTML has used the name **`slideshow`**
-for a result object of `remark.create()`.
+If the slide html use a name other than `slideshow`, 
+you can set the name at the env `REMARKJS_NAME`.
+
+You can also customize printed page size at the env
+`REMARKJS_SIZE` such as `1024:768`.
 
 ## Dependencies
 
