@@ -61,12 +61,12 @@ you can easily make a 6-up handout pdf file from existing pdf files.
 For example, 
 
 ```bash
-$ pdfjam-slide6up remarkjs.com.pdf
+$ pdfjam-slides6up remarkjs.com.pdf
 ```
 
-would generate a 6up framed pdf file `remarkjs.com-6up.pdf`.
+would generate a bordered 6-up pdf file `remarkjs.com-6up.pdf`.
 
-NOTE: `pdfjam-slide6up` is same as the plain `pdfjam` command with these options:
+NOTE: `pdfjam-slides6up` is same as the plain `pdfjam` command with these options:
 
 ```bash
 $ pdfjam --suffix 6up --nup 2x3 --frame true --noautoscale false --delta "0.2cm 0.3cm" --scale 0.95 \
