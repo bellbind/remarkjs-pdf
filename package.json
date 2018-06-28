@@ -1,1 +1,8 @@
-{"name": "remarkjs-pdf", "version": "0.0.1", "bin": "remarkjs-pdf.js", "dependencies": {"puppeteer": "*"}}
+{
+  "name": "remarkjs-pdf",
+  "version": "0.0.1",
+  "bin": "remarkjs-pdf.js",
+  "dependencies": {
+    "puppeteer": "*"
+  }
+}

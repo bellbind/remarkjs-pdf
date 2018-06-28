@@ -81,13 +81,13 @@ async function convertPdf(browser, {html, pdf, name, size}) {
 
   // 1. check remark.js slideshow features
   const notFound = await page.evaluate(ss => {
-    const slideshow = eval(ss);
-    if (typeof slideshow !== "object") return "slideshow object";
-    if (typeof slideshow.getRatio !== "function")
+    if (typeof Function(`return ${ss}`)() !== "object")
+      return "slideshow object";
+    if (typeof Function(`return ${ss}`)().getRatio !== "function")
       return "slideshow.getRatio() method";
-    if (typeof slideshow.getSlideCount !== "function")
+    if (typeof Function(`return ${ss}`)().getSlideCount !== "function")
       return "slideshow.getSlideCount() method";
-    if (typeof slideshow.gotoNextSlide !== "function")
+    if (typeof Function(`return ${ss}`)().gotoNextSlide !== "function")
       return "slideshow.gotoNextSlide() method";
     return "";
   }, name);
@@ -96,7 +96,8 @@ async function convertPdf(browser, {html, pdf, name, size}) {
   }
 
   // 2. inject printing css for fullsheet
-  const ratio = await page.evaluate(ss => eval(ss).getRatio(), name);
+  const ratio = await page.evaluate(
+    ss => Function(`return ${ss}`)().getRatio(), name);
   // size by comparing chrome view-area and pdf view-area
   const [w, h] = size ? size : ratio === "4:3" ? [864, 648] : [1040, 585];
   await page.evaluate((w, h) => {
@@ -120,9 +121,11 @@ async function convertPdf(browser, {html, pdf, name, size}) {
   }, w, h);
 
   // 3. once render all pages to mermaid graph rendering
-  const pages = await page.evaluate(ss => eval(ss).getSlideCount(), name);
+  const pages = await page.evaluate(
+    ss => Function(`return ${ss}`)().getSlideCount(), name);
   for (let i = 1; i < pages; i++) {
-    await page.evaluate(ss => eval(ss).gotoNextSlide(), name);
+    await page.evaluate(
+      ss => Function(`return ${ss}`)().gotoNextSlide(), name);
   }
 
   // 4. print pdf pages with no margin
