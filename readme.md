@@ -73,6 +73,6 @@ $ pdfjam --suffix 6up --nup 2x3 --frame true --noautoscale false --delta "0.2cm 
          --pagecommand "{\thispagestyle{empty}}" --preamble "\footskip 2.7cm" remarkjs.com.pdf
 ```
 
-If you want page numbers in each sheet, 
+If you want to embed page numbers in each sheet, 
 change the option `--pagecommand "{\thispagestyle{empty}}"` to
 `--pagecommand "{\thispagestyle{plain}}"`.
