@@ -48,3 +48,34 @@ You can also customize printed page size at the env
 ## License
 
 - [CC0](http://creativecommons.org/publicdomain/zero/1.0/)
+
+
+## Appendix: convert to n-up handout pdf 
+
+With the  
+[pdfjam](https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/firth/software/pdfjam/) 
+commands in [`texlive`](https://www.tug.org/texlive/),  
+you can easily make a 6-up handout pdf file from existing pdf files.
+
+- apt: texlive-extra-utils
+- homebrew: mactex (cask)
+
+Example:
+
+```bash
+$ pdfjam-slide6up remarkjs.com.pdf
+```
+
+It generates a 6up framed pdf file `remarkjs.com-6up.pdf`.
+
+NOTE: `pdfjam-slide6up` is same as the plain `pdfjam` command with these options:
+
+```bash
+$ pdfjam --suffix 6up --nup 2x3 --frame true --noautoscale false --delta "0.2cm 0.3cm" --scale 0.95 \
+         --pagecommand "{\thispagestyle{empty}}" --preamble "\footskip 2.7cm" remarkjs.com.pdf
+```
+
+For example, if you want page numbers in each sheet, 
+change the option `--pagecommand "{\thispagestyle{empty}}"` to
+`--pagecommand "{\thispagestyle{plain}}"`.
+
