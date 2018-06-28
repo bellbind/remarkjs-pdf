@@ -50,10 +50,10 @@ You can also customize printed page size at the env
 - [CC0](http://creativecommons.org/publicdomain/zero/1.0/)
 
 
-## Appendix: convert to n-up handout pdf 
+## Appendix: convert to n-up handout pdf from slide pdf
 
 With the [pdfjam](https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/firth/software/pdfjam/) commands in [`texlive`](https://www.tug.org/texlive/),  
-you can easily make a 6-up handout pdf file from existing pdf files.
+you can easily make a 6-up handout pdf file from existing slide-per-page pdf files.
 
 - apt: texlive-extra-utils
 - homebrew: mactex (cask)
