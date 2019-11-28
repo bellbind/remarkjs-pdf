@@ -77,7 +77,7 @@ async function main() {
 }
 async function convertPdf(browser, {html, pdf, name, size}) {
   const page = await browser.newPage();
-  await page.goto(html);
+  await page.goto(html, {waitUntil: 'load', timeout: 0});
 
   // 1. check remark.js slideshow features
   const notFound = await page.evaluate(ss => {
